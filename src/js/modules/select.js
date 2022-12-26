@@ -14,7 +14,6 @@ document.querySelectorAll(".select").forEach((select) => {
   selectCurrent.addEventListener("click", () => {
     selectList.classList.toggle("select__list_show");
     selectCurrent.classList.toggle("select__current_show");
-    selectCurrent.classList.add("select__current_selected");
     selected = true;
   });
 
@@ -39,6 +38,11 @@ document.querySelectorAll(".select").forEach((select) => {
         contactsImg.classList.add("hidden");
       } else {
         contactsImg.classList.remove("hidden");
+      }
+
+      // Меняем класс, если элемент выбран
+      if (selectCurrent.textContent !== "City") {
+        selectCurrent.classList.add("select__current_selected");
       }
 
       //скрываем выпадающий список

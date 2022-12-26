@@ -18,17 +18,18 @@
 
 .welcome {
   background-color: $bg;
-  padding-bottom: 100px;
+  padding-bottom: 54px;
+  padding-top: 30px;
   &__content {
     display: flex;
   }
   &__img {
-    margin-top: -10px;
-    margin-left: -10px;
+    margin-top: 8px;
+    margin-left: -8px;
   }
   &__description {
-    margin: 50px 0 0 auto;
-    flex: 0 0 clamp(358px, 38.889vw, 560px);
+    margin: 51px 0 0 auto;
+    flex: 0 0 clamp(358px, 38.889vw, 549px);
   }
   &__title {
     font-weight: 700;
@@ -36,7 +37,7 @@
     line-height: 50px;
 
     color: $grayDark;
-    margin-bottom: 42px;
+    margin-bottom: 43px;
     span {
       color: $green;
     }
@@ -50,63 +51,71 @@
   }
   &__btn {
     text-transform: uppercase;
+    padding: 10px 24px;
+    line-height: 20px;
   }
   @media (max-width: $tablet) {
-    padding-bottom: 95px;
+    padding-bottom: 70px;
+    padding-top: 0px;
 
     &__img {
       display: none;
     }
     &__description {
-      margin: 40px 0 0 0;
+      margin: 38px 0 0 0;
       flex: 0 0 clamp(340px, 42.969vw, 358px);
     }
     &__title {
       font-size: clamp(25px, 4.557vw, 35px);
       line-height: clamp(35px, 6.51vw, 50px);
-      margin-bottom: clamp(22px, 4.427vw, 34px);
-      padding-left: 2px;
+      margin-bottom: clamp(22px, 4.427vw, 31px);
     }
     &__text {
       font-size: 16px;
       line-height: 25px;
-      padding: 0 10px 0 7px;
-      margin-bottom: clamp(28px, 4.688vw, 36px);
+      padding: 0 10px 0 5px;
+      margin-bottom: clamp(28px, 4.688vw, 34px);
+    }
+    &__btn {
+      padding: 10px 24px;
+      line-height: 20px;
     }
   }
   @media (max-width: $mobile) {
-    padding-bottom: 30px;
+    padding-bottom: 24px;
 
     &__description {
-      margin: 0;
+      margin: 30px 0 0 0;
       flex: 0 0 clamp(330px, 46.615vw, 358px);
     }
     &__title {
       font-size: clamp(25px, 6.579vw, 35px);
       line-height: clamp(35px, 9.211vw, 50px);
-      margin-bottom: clamp(22px, 5.789vw, 34px);
+      margin-bottom: clamp(20px, 5.263vw, 32px);
       padding-left: 0;
     }
     &__text {
       font-size: 16px;
       line-height: 25px;
       padding: 0 10px 0 0;
-      margin-bottom: clamp(28px, 7.368vw, 36px);
+      margin-bottom: clamp(26px, 6.316vw, 32px);
     }
     &__btn {
-      padding: 6px 13px;
-      font-size: 14px;
+      padding: 5px 15px;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 20px;
     }
   }
 }
 
-// Section welcome
+// Section about
 
 .about {
   background-color: $white;
-  padding-bottom: 105px;
   &__container {
-    padding-top: 84px;
+    padding-bottom: 94px;
+    padding-top: 93px;
   }
   &__content {
     display: flex;
@@ -134,9 +143,8 @@
     color: $gray;
   }
   @media (max-width: $tablet) {
-    padding-bottom: 63px;
-
     &__container {
+      padding-bottom: 63px;
       padding-top: 40px;
     }
     &__content {
@@ -176,11 +184,9 @@
     }
   }
   @media (max-width: $mobile) {
-    padding-bottom: 40px;
-
     &__container {
+      padding-bottom: 36px;
       padding-top: 30px;
-      max-width: clamp(350px, 92.105vw, 698px);
     }
     &__content {
       flex-direction: column;
@@ -224,12 +230,12 @@
 
 .service {
   background-color: $bg;
-  padding-bottom: 120px;
+  padding-bottom: 122px;
 
   &__head {
-    padding-top: 35px;
+    padding-top: 40px;
     display: flex;
-    margin-bottom: 87px;
+    margin-bottom: 80px;
   }
   &__title {
     font-family: "Inika", serif;
@@ -251,12 +257,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      background: rgba($orange, 0.9);
+    }
+    &.active {
+      background: $orange;
+      color: $white;
+      &:hover {
+        background: #cd5420;
+      }
+    }
+    &.blocking {
+      pointer-events: none;
+      cursor: alias;
+    }
   }
   &__btn-wrapper {
     margin-left: auto;
     display: flex;
     align-items: center;
-    margin-right: 218px;
+    margin-right: 216px;
     margin-bottom: -5px;
     gap: 38px;
   }
@@ -265,10 +286,12 @@
     display: grid;
     grid-template-columns: 330px 330px 330px;
     column-gap: 116px;
-    row-gap: 55px;
+    row-gap: 54px;
   }
+
   @media (max-width: $tablet) {
     padding-bottom: 70px;
+    margin-top: 32px;
 
     &__head {
       padding-top: 60px;
@@ -278,7 +301,7 @@
     &__title {
       font-size: clamp(25px, 4.557vw, 35px);
       line-height: clamp(33px, 5.99vw, 46px);
-      margin-bottom: 40px;
+      padding-bottom: 42px;
     }
     &__body {
       display: grid;
@@ -292,41 +315,43 @@
       width: clamp(121px, 20.964vw, 161px);
       height: clamp(35px, 6.51vw, 50px);
     }
-    @media (max-width: $mobile) {
-      padding-bottom: 25px;
+  }
 
-      &__head {
-        padding-top: 29px;
-        flex-direction: column;
-        margin-bottom: 40px;
-      }
-      &__title {
-        font-family: "Inika", serif;
-        font-size: clamp(25px, 6.579vw, 35px);
-        line-height: clamp(33px, 8.684vw, 46px);
-        max-width: 200px;
-        margin-bottom: 39px;
-      }
-      &__body {
-        display: grid;
-        justify-content: center;
-        grid-template-columns: 280px;
-        column-gap: 0;
-        row-gap: 34px;
-      }
-      &__btn-wrapper {
-        flex-wrap: wrap;
-        column-gap: 10px;
-        row-gap: 9px;
-        margin: 0;
-      }
-      &__btn {
-        font-size: clamp(15px, 3.947vw, 20px);
-        line-height: clamp(20px, 5.263vw, 26px);
+  @media (max-width: $mobile) {
+    padding-bottom: 28px;
+    margin-top: 0px;
 
-        width: clamp(121px, 31.842vw, 161px);
-        height: clamp(35px, 9.211vw, 50px);
-      }
+    &__head {
+      padding-top: 30px;
+      flex-direction: column;
+      margin-bottom: 38px;
+    }
+    &__title {
+      font-family: "Inika", serif;
+      font-size: clamp(25px, 6.579vw, 35px);
+      line-height: clamp(33px, 8.684vw, 46px);
+      max-width: 200px;
+      padding-bottom: 39px;
+    }
+    &__body {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 280px;
+      column-gap: 0;
+      row-gap: 34px;
+    }
+    &__btn-wrapper {
+      flex-wrap: wrap;
+      column-gap: 10px;
+      row-gap: 9px;
+      margin: 0;
+    }
+    &__btn {
+      font-size: clamp(15px, 3.947vw, 20px);
+      line-height: clamp(20px, 5.263vw, 26px);
+
+      width: clamp(121px, 31.842vw, 161px);
+      height: clamp(35px, 9.211vw, 50px);
     }
   }
 
@@ -340,6 +365,24 @@
     gap: 10px;
     height: 450px;
     overflow: hidden;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(4px);
+      z-index: 8888;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+    }
+    &.blur {
+      &::after {
+        opacity: 1;
+      }
+    }
     &__img {
       object-fit: cover;
       width: 329px;
@@ -361,6 +404,7 @@
       line-height: 20px;
       color: $gray;
     }
+
     @media (max-width: $tablet) {
       &__img {
         width: 280px;
@@ -374,12 +418,29 @@
         font-size: 20px;
         line-height: 20px;
         color: $orange;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
       }
       &__description {
         max-width: 213px;
-        text-align: start;
-        padding-left: 5px;
+      }
+    }
+    @media (max-width: $mobile) {
+      &__img {
+        width: 280px;
+        height: 350px;
+        img {
+          width: 100%;
+        }
+      }
+      &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        color: $orange;
+        margin-bottom: 10px;
+      }
+      &__description {
+        max-width: 213px;
       }
     }
   }
@@ -389,15 +450,14 @@
 
 .prices {
   background-color: $white;
-  padding-bottom: 5px;
+  padding-bottom: 107px;
   &__content {
-    padding-top: 38px;
+    padding-top: 39px;
     display: flex;
     flex-direction: row;
   }
 
   &__title {
-    margin-top: 5px;
     margin-bottom: 60px;
     font-weight: 700;
     font-size: clamp(35px, 2.778vw, 40px);
@@ -432,14 +492,17 @@
     line-height: 26px;
   }
   &__img {
-    margin-top: 2px;
-    margin-right: -9px;
+    width: 180px;
+    margin-top: 33px;
+    margin-right: -23px;
   }
   @media (max-width: $tablet) {
-    padding-bottom: 67px;
-
+    padding-bottom: 80px;
+    &__content {
+      padding-top: 32px;
+    }
     &__title {
-      margin: 5px 0 60px 15px;
+      margin: 9px 0 56px 15px;
       font-size: clamp(25px, 4.557vw, 35px);
       line-height: clamp(30px, 5.469vw, 42px);
     }
@@ -447,7 +510,6 @@
       font-size: clamp(20px, 3.255vw, 25px);
       line-height: clamp(35px, 4.557vw, 50px);
       margin-bottom: 28px;
-      text-align: center;
       max-width: 296px;
     }
     &__btn {
@@ -455,9 +517,8 @@
       margin-bottom: 45px;
     }
     &__img {
-      width: 156px;
-      height: 180px;
-      margin: 0 70px 0 0;
+      margin-top: -15px;
+      margin-right: -23px;
     }
     &__description {
       margin-left: auto;
@@ -465,7 +526,7 @@
     }
   }
   @media (max-width: $mobile) {
-    padding-bottom: 42px;
+    padding-bottom: 39px;
 
     &__content {
       padding-top: 25px;
@@ -476,7 +537,7 @@
     }
 
     &__title {
-      margin: 0 0 40px 0;
+      margin: 0 0 37px 0;
       font-size: clamp(25px, 6.579vw, 35px);
       line-height: clamp(30px, 7.895vw, 42px);
     }
@@ -484,12 +545,14 @@
       font-size: clamp(20px, 5.263vw, 25px);
       line-height: clamp(35px, 9.211vw, 50px);
       margin-bottom: 20px;
+      text-align: center;
     }
     &__img {
       display: none;
+      position: relative;
     }
     &__description {
-      margin: 15px 0 0 0;
+      margin: -3px 0 0 0;
       max-width: 230px;
     }
     &__btn {
@@ -506,7 +569,7 @@
   max-width: 332px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 29px;
   padding: 34px 41px;
   border: 1px solid #e3e1d5;
   border-radius: 20px;
@@ -555,7 +618,7 @@
     }
   }
   &__body {
-    height: 0px;
+    height: 0;
     font-family: "Inter";
     font-weight: 400;
     font-size: 12px;
@@ -564,7 +627,7 @@
     position: relative;
     transform: scaleY(0);
     transform-origin: top;
-    transition: all 0s;
+    transition: all 0.3s ease-in-out;
     p {
       font-weight: 300;
       font-size: 10px;
@@ -599,8 +662,28 @@
   }
   @media (max-width: $mobile) {
     gap: 14px;
+    max-width: 224px;
+    padding: 29px 22px;
+    &__head {
+      font-size: 15px;
+      line-height: 20px;
+
+      &::after {
+        top: 50%;
+        right: 3px;
+        content: "";
+        width: 4px;
+        height: 4px;
+      }
+      &::before {
+        top: -6px;
+        right: -12px;
+        width: 16px;
+        height: 16px;
+      }
+    }
     &__price {
-      padding: 16px 40px 16px 30px;
+      padding: 14px 40px 16px 30px;
     }
   }
 }
@@ -609,7 +692,7 @@
   background: #d6e7d2;
 
   .tariffs__body {
-    height: auto;
+    height: 100px;
     transform: scaleY(1);
     transition: all 0.3s ease-in-out;
     padding-top: 6px;
@@ -627,6 +710,13 @@
     &::before {
       background: #aea1a1;
     }
+
+    @media (max-width: $mobile) {
+      &:after {
+        right: 4px;
+        top: 55%;
+      }
+    }
   }
 }
 // Contacts
@@ -636,7 +726,7 @@
   &__content {
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 44px;
+    padding-top: 54px;
   }
   &__select-wrapper {
     width: 710px;
@@ -648,7 +738,7 @@
     font-size: 40px;
     line-height: 52px;
     color: $green;
-    margin: 15px 0 35px 0px;
+    margin: 5px 0 35px 0px;
   }
 
   &__img {
@@ -662,7 +752,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding-top: 40px;
+      padding-top: 50px;
       height: 740px;
     }
     &__container {
@@ -679,7 +769,7 @@
       line-height: clamp(35px, 6.771vw, 52px);
       line-height: 33px;
       color: $green;
-      margin: 0 0 100px 0;
+      margin: 0 0 108px 0;
     }
 
     &__img {
@@ -709,7 +799,7 @@
       font-size: clamp(25px, 6.579vw, 40px);
       line-height: clamp(35px, 9.211vw, 52px);
       color: $green;
-      margin: 0 0 84px 0;
+      margin: 0 0 80px 0;
     }
     &__img {
       margin: 0;
@@ -722,7 +812,7 @@
 
 .card-select {
   width: 448px;
-  margin-top: 47px;
+  margin-top: 48px;
   margin-left: auto;
   background: #edf2ec;
   border: 1px solid #000000;

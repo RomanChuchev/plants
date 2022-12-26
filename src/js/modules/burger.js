@@ -17,6 +17,7 @@ document
         bodyUnLock();
       }
     });
+
     if (burger.classList.contains("open")) {
       bodyLock();
     } else {
@@ -32,6 +33,18 @@ document.querySelector(".menu__blur").addEventListener("click", function () {
   } else {
     bodyUnLock();
   }
+});
+
+document.querySelectorAll(".menu__link").forEach((el) => {
+  el.addEventListener("click", function () {
+    burger.classList.remove("open");
+    menu.classList.remove("open");
+    if (burger.classList.contains("open")) {
+      bodyLock();
+    } else {
+      bodyUnLock();
+    }
+  });
 });
 
 function bodyLock() {
